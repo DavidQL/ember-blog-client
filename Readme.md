@@ -12,7 +12,7 @@ open up your terminal/cmd
 
 run
 ```shell
-npm install -g grunt
+npm install -g grunt-cli
 //this installs the grunt command globally
 
 cd to directory for code
@@ -23,6 +23,9 @@ git clone https://github.com/sgterban/ember-grunt.git
 
 cd into repository root
 //this is where we'll runt grunt tasks from
+
+npm install
+//this will install all the dependencies of the project
 
 grunt
 //starts our build tools
