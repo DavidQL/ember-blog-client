@@ -20,6 +20,10 @@ module.exports = function(grunt) {
 			dist: {
 				src:['app/library/jquery-1.9.1.js','app/library/handlebars-1.0.0-rc3.js','app/library/ember-1.0.0-rc1.js','app/app.js','debug/templates.js','app/controllers/*.js','app/views/*.js','app/routes/*.js'],
 				dest:['debug/app.js']
+			},
+			test: {
+				src:['app/tests/*.js'],
+				dest:['qunit/tests.js']
 			}
 		},
 		sass: {
@@ -59,11 +63,14 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			files: ['app/*.js','app/css/*.scss','app/templates/*.hbs'],
-			tasks: ['jshint','ember_handlebars','concat','sass'],
+			files: ['app/*.js','app/css/*.scss','app/templates/*.hbs', 'app/tests/*.js'],
+			tasks: ['jshint','ember_handlebars','concat','sass','qunit'],
 			options: {
 				debounceDelay:300
 			}
+		},
+		qunit: {
+			all: ['qunit/index.html']
 		},
 		connect: {
 			debug: {
@@ -76,6 +83,12 @@ module.exports = function(grunt) {
 				options: {
 					port:9091,
 					base:'release'
+				}
+			},
+			test: {
+				options: {
+					port:9092,
+					base:'qunit'
 				}
 			}
 		}
@@ -90,6 +103,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-ember-handlebars');
     grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.registerTask('default', ['connect','watch']);
+    grunt.loadNpmTasks('grunt-contrib-qunit');
+	grunt.registerTask('default', ['jshint','ember_handlebars','concat','sass','connect','qunit','watch']);
 	grunt.registerTask('release', ['uglify','cssmin']);
 };
