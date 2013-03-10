@@ -49,6 +49,15 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		clean: ["debug/images/", "release/images/"],
+		copy: {
+			main: {
+				files: [
+					{expand:true, cwd:'app/images/', src: ['**'], dest: 'debug/images/'},
+					{expand:true, cwd:'app/images/', src: ['**'], dest: 'release/images/'}
+				]
+			}
+		},
 		uglify: {
 			build: {
 				src: 'debug/app.js',
@@ -63,10 +72,19 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			files: ['app/*.js','app/css/*.scss','app/templates/*.hbs', 'app/tests/*.js'],
-			tasks: ['jshint','ember_handlebars','concat','sass','qunit'],
-			options: {
-				debounceDelay:300
+			scripts: {
+				files: ['app/*.js','app/css/*.scss','app/templates/*.hbs', 'app/tests/*.js'],
+				tasks: ['jshint','ember_handlebars','concat','sass','qunit'],
+				options: {
+					debounceDelay:300
+				}
+			},
+			images: {
+				files: ['app/images/*'],
+				tasks:['clean', 'copy'],
+				options: {
+					debounceDelay:300
+				}
 			}
 		},
 		qunit: {
@@ -104,6 +122,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-ember-handlebars');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-qunit');
-	grunt.registerTask('default', ['jshint','ember_handlebars','concat','sass','connect','qunit','watch']);
-	grunt.registerTask('release', ['uglify','cssmin']);
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.registerTask('default', ['jshint','ember_handlebars','concat','sass','clean','copy','connect','qunit','watch']);
+	grunt.registerTask('release', ['uglify','cssmin','clean','copy']);
 };

@@ -100,6 +100,8 @@ debug/app.css
 release/app.min.js
 release/app.min.css
 qunit/tests.js
+debug/images/*
+release/images/*
 
 # Others
 [Bb]in

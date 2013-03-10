@@ -28,7 +28,7 @@ grunt
 //starts our build tools
 ```
 
-Access the page at - http://localhost:9090/ 
+Access the page at - **http://localhost:9090/**
 
 **Note that this is loading the /debug directory of files**
 
@@ -63,6 +63,10 @@ This project is watching for any .js files in these directories:
 
 Feel free to add them at your discretion.  
 
+## Images
+
+The application is currently configured to look at the app/images directory for images.  Each time a file is added or a release is run, these images will be copied into the /debug/images and /release/images directories.
+
 ## QUnit
 
 This project includes a basic testing infrastructure.  All tests should be located in the **/tests** directory.  The project already **includes an example test**.  
@@ -73,7 +77,7 @@ This project includes a basic testing infrastructure.  All tests should be locat
 	});
 ```
 
-These tests will run in the **terminal on save** of javascript files within the /app directory.  The tests are compiled into qunit/test.js, which is included in the index.html file also located in this directory.  Unit Test away!
+These tests will run in the **terminal on save** of javascript files within the /app directory.  The tests are compiled into qunit/test.js, which is included in the index.html file also in this directory.  Unit Test away!
 
 Qunit Tests via web browser can be found at **http://localhost:9092/**
 
@@ -96,6 +100,7 @@ The **/release** directory will contain your production-ready code
 ## Future Goals of Repo
 1.  spriting/image optimzation
 2.  enable requires and/or index files for controllers, views, and routes with dependencies
+3.  fixture data server
 
 ##Special Thank You
 This project would not be possible were it not for the hard work from the folks at Ember.js, Grunt.js, NPM, and the many Grunt contributors that make up this project. The project is truly a "dwarf standing on the shoulder of giants"
