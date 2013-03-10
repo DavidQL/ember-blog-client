@@ -94,6 +94,11 @@ DocProject/Help/html
 
 # Click-Once directory
 publish
+debug/app.js
+debug/templates.js
+debug/app.css
+release/app.min.js
+release/app.min.css
 
 # Others
 [Bb]in
