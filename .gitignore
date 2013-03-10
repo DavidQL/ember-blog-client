@@ -99,6 +99,7 @@ debug/templates.js
 debug/app.css
 release/app.min.js
 release/app.min.css
+qunit/tests.js
 
 # Others
 [Bb]in

@@ -1,72 +1,101 @@
-Ember Grunt Starter
+# Ember Grunt Starter
 
 This is a build/development tool for Ember developers to setup a basic application that includes: SASS compilation, concatenation of all javascript to a single app.js file, ember handlebars (templates) compilation, jshinting, local http server, project watch tools.  It also includes a "release" function which will uglify (minify/compress) all files for a production deployment version of your app.  
 
-Getting Started
+## Getting Started
 	
-	***THIS GETTING STARTED ASSUMES YOU ALREADY HAVE NPM INSTALLED**
-		If you do not, download it at https://npmjs.org
+**THIS GETTING STARTED ASSUMES YOU ALREADY HAVE NPM INSTALLED**
 
-	open up your terminal/cmd
-	install grunt - "type" npm install -g grunt
+If you do not, download it here: [NPM](https://npmjs.org)
 
-	cd to directory for code
-	"type" git clone https://github.com/sgterban/ember-grunt.git
-	cd into repo
-	"type" grunt
+open up your terminal/cmd
 
-	Access the page at - http://localhost:9090/
-	**Note that this is loading the /debug directory of files
+run
+```shell
+npm install -g grunt
+//this installs the grunt command globally
 
-	Your terminal will continue to watch project directories as you save/edit files.  
-	On each save, grunt will recompile all of your files, and run jshint against them.  
-	Any warnings will be displayed on the terminal.  Keep your jshinter happy!
+cd to directory for code
+//this is where we will put the code
 
-Templates 
+git clone https://github.com/sgterban/ember-grunt.git
+//this downloads the repository
 
-	This project pre-compiles your ember templates for you! 
-	**It is important to note that naming convention MATTERS!  
+cd into repository root
+//this is where we'll runt grunt tasks from
 
-	The file name of your templates (.hbs files) will be transpiled into the equivalent of 
-	<script type="text/x-handlebars" data-template-name="FILE_NAME">
+grunt
+//starts our build tools
+```
 
-SASS
+Access the page at - http://localhost:9090/ 
 
-	**For those new to SASS, do not worry! The SASS file will take regular CSS as well!  
-	In the mean time, I encourage you to look into SASS, as it is awesome.  
+**Note that this is loading the /debug directory of files**
 
-	The root of your CSS is in /css/base.scss.  
+Your **terminal** will continue to **watch** project directories as you save/edit files.  On each **save**, grunt will recompile **all** of your files, and **run jshint** against them.  Any **jshint errors/warnings** will be displayed on the **terminal**.  Keep your jshinter happy!
 
-	If you are adding additional files to this directory, make sure to add them to this file
-	via @import.  
+## Templates 
 
-Controllers, Views, Routes
+This project **pre-compiles** your ember templates for you!
 
-	This project is watching for any .js files in these directories.  
-	Feel free to add them at your discretion.  
+**It is important to note that naming convention MATTERS!** 
 
+The file name of your templates (.hbs files) will be transpiled into the equivalent of 
+```html	
+<script type="text/x-handlebars" data-template-name="FILE_NAME">
+````
 
-QUnit
+## SASS
 
-	This project includes a basic testing infrastructure.  
-	All tests should be located in the /tests directory.  
-	The project already includes an example test.  
+For those new to **SASS**, do NOT worry! The SASS file will compile **regular CSS** as well!  In the mean time, I encourage you to look into [SASS](http://sass-lang.com).
 
-	These tests will run in the terminal on save of javascript files within the /app directory.
-	The tests are compiled into qunit/test.js, which is included in the index.html file also
-	located in this directory.  Unit Test away!
+The root of your CSS is in /css/base.scss.  
 
-	Qunit Tests via web browser can be found at http://localhost:9092/
+If you are adding additional files to this directory, make sure to add them to this file via @import.  
 
-Release Process
-	
-	open up your terminal/cmd
-	cd into repo
-	"type" grunt relase
+## Controllers, Views, Routes
 
-	Access your production candidate at - http://localhost:9091
-	The /release directory will contain your production-ready code
+This project is watching for any .js files in these directories: 
 
-Future Goals of Repo
-	spriting/image optimzation
-	enable requires abd/or index files for controllers, views, and routes with dependencies
+1. /app/views/
+2. /app/controllers/
+3. /app/routes/
+
+Feel free to add them at your discretion.  
+
+## QUnit
+
+This project includes a basic testing infrastructure.  All tests should be located in the **/tests** directory.  The project already **includes an example test**.  
+
+```javascript
+	test("qunit example", function() {
+		ok(1 == "1", "Basic test example ");
+	});
+```
+
+These tests will run in the **terminal on save** of javascript files within the /app directory.  The tests are compiled into qunit/test.js, which is included in the index.html file also located in this directory.  Unit Test away!
+
+Qunit Tests via web browser can be found at **http://localhost:9092/**
+
+## Release Process
+
+This project is already setup for you to build release builds of your Ember applications.
+Here is how:
+
+1. open up your terminal/cmd
+2. run
+
+```shell
+cd into repo
+grunt release
+```
+
+Access your production candidate at **http://localhost:9091**
+The **/release** directory will contain your production-ready code
+
+## Future Goals of Repo
+1.  spriting/image optimzation
+2.  enable requires and/or index files for controllers, views, and routes with dependencies
+
+##Special Thank You
+This project would not be possible were it not for the hard work from the folks at Ember.js, Grunt.js, NPM, and the many Grunt contributors that make up this project. The project is truly a "dwarf standing on the shoulder of giants"
