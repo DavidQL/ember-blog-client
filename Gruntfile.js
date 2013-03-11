@@ -40,7 +40,6 @@ module.exports = function(grunt) {
 						var arr = fileName.split("."),
 							path = arr[arr.length - 2].split("/"),
 							name = path[path.length -1];
-						console.log(name);
 						return name;
 					}
 				},
@@ -73,7 +72,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			scripts: {
-				files: ['app/*.js','app/css/*.scss','app/templates/*.hbs', 'app/tests/*.js'],
+				files: ['app/*.js','app/controllers/*.js','app/views/*.js','app/routes/*.js','app/css/*.scss','app/templates/*.hbs', 'app/tests/*.js'],
 				tasks: ['jshint','ember_handlebars','concat','sass','qunit'],
 				options: {
 					debounceDelay:300
