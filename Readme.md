@@ -64,7 +64,7 @@ This project is watching for any .js files in these directories:
 2. /app/controllers/
 3. /app/routes/
 
-Feel free to add them at your discretion.  
+Feel free to add them at your discretion.  Note that an example of the class extention for each directory has been created for you.  If you do not need to extend the classes, ERASE them!  Ember will create them automatically if not defined.
 
 ## Images
 
@@ -106,4 +106,4 @@ The **/release** directory will contain your production-ready code
 3.  fixture data server
 
 ##Special Thank You
-This project would not be possible were it not for the hard work from the folks at Ember.js, Grunt.js, NPM, and the many Grunt contributors that make up this project. The project is truly a "dwarf standing on the shoulder of giants"
+This project would not be possible were it not for the hard work from the folks at Ember.js, Grunt.js, NPM, and the many Grunt contributors that make up this project.  A special thanks to Jeff Schilling for introducing me to Ember, and without whom I would not have been able to make this.The project is truly a "dwarf standing on the shoulder of giants".
