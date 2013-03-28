@@ -19,11 +19,11 @@ module.exports = function(grunt) {
 		concat: {
 			dist: {
 				src:['app/library/jquery-1.9.1.js','app/library/handlebars-1.0.0-rc3.js','app/library/ember-1.0.0-rc1.js','app/app.js','debug/templates.js','app/controllers/*.js','app/views/*.js','app/routes/*.js'],
-				dest:['debug/app.js']
+				dest:'debug/app.js'
 			},
 			test: {
 				src:['app/tests/*.js'],
-				dest:['qunit/tests.js']
+				dest:'qunit/tests.js'
 			}
 		},
 		sass: {
