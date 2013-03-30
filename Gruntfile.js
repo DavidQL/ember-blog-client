@@ -1,11 +1,18 @@
 module.exports = function(grunt) {
+	'use strict';
 	//All grunt related functions
 
 	grunt.initConfig({
 		jshint: {
 			files: ['gruntfile.js', 'app/controllers/*.js','app/*.js','app/views/*.js','app/routes/*.js'],
 			options: {
+				eqeqeq:true,
+				eqnull:true,
+				strict:true,
+				latedef:true,
+				undef:true,
 				globals: {
+					force:true,
 					jQuery: true,
 					console:true,
 					module:true,
@@ -18,7 +25,7 @@ module.exports = function(grunt) {
 		},
 		concat: {
 			dist: {
-				src:['app/library/jquery-1.9.1.js','app/library/handlebars-1.0.0-rc3.js','app/library/ember-1.0.0-rc1.js','app/app.js','debug/templates.js','app/controllers/*.js','app/views/*.js','app/routes/*.js'],
+				src:['app/library/jquery-1.9.1.js','app/library/handlebars-1.0.0-rc3.js','app/library/ember-1.0.0-rc2.js','app/app.js','debug/templates.js','app/controllers/*.js','app/views/*.js','app/routes/*.js'],
 				dest:'debug/app.js'
 			},
 			test: {
@@ -72,7 +79,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			scripts: {
-				files: ['app/*.js','app/controllers/*.js','app/views/*.js','app/routes/*.js','app/css/*.scss','app/templates/*.hbs', 'app/tests/*.js'],
+				files: ['app/library/*.js','app/*.js','app/controllers/*.js','app/views/*.js','app/routes/*.js','app/css/*.scss','app/templates/*.hbs', 'app/tests/*.js'],
 				tasks: ['jshint','ember_handlebars','concat','sass','qunit'],
 				options: {
 					debounceDelay:300
