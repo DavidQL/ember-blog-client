@@ -35,7 +35,7 @@ Access the page at - **http://localhost:9090/**
 
 **Note that this is loading the /debug directory of files**
 
-Your **terminal** will continue to **watch** project directories as you save/edit files.  On each **save**, grunt will recompile **all** of your files, and **run jshint** against them.  Any **jshint errors/warnings** will be displayed on the **terminal**.  Keep your jshinter happy!
+Your **terminal** will continue to **watch** project directories as you save/edit files.  On each **save**, grunt will recompile **all** of your files.
 
 ## Templates 
 
@@ -86,7 +86,7 @@ Qunit Tests via web browser can be found at **http://localhost:9092/**
 
 ## Release Process
 
-This project is already setup for you to build release builds of your Ember applications.
+This project is already setup for you to build release builds of your Ember applications.  Note that the release process will check your javascript files for jshint errors and warnings.  You will need to fix these warnings in order to complete the release process.  
 Here is how:
 
 1. open up your terminal/cmd
