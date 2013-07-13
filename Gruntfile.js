@@ -124,12 +124,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-handlebars');
     grunt.loadNpmTasks('grunt-ember-handlebars');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.registerTask('default', ['jshint','ember_handlebars','concat','sass','clean','copy','connect','qunit','watch']);
-	grunt.registerTask('release', ['uglify','cssmin','clean','copy']);
+	grunt.registerTask('default', ['ember_handlebars','concat','sass','clean','copy','connect','qunit','watch']);
+	grunt.registerTask('release', ['jshint','uglify','cssmin','clean','copy']);
 };
