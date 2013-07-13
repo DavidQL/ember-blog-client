@@ -104,6 +104,3 @@ The **/release** directory will contain your production-ready code
 1.  spriting/image optimzation
 2.  enable requires and/or index files for controllers, views, and routes with dependencies
 3.  fixture data server
-
-##Special Thank You
-This project would not be possible were it not for the hard work from the folks at Ember.js, Grunt.js, NPM, and the many Grunt contributors that make up this project.  A special thanks to Jeff Schilling for introducing me to Ember, and without whom I would not have been able to make this.The project is truly a "dwarf standing on the shoulder of giants".
