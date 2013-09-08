@@ -100,7 +100,7 @@ grunt release
 Access your production candidate at **http://localhost:9091**
 The **/release** directory will contain your production-ready code
 
-## Future Goals of Repo
-1.  spriting/image optimzation
-2.  enable requires and/or index files for controllers, views, and routes with dependencies
-3.  fixture data server
+## Release History
+
+ * 2013-06-06   v0.2.0   Updated to Ember 1.0, Handlebars 1.0   
+ * 2013-03-10   v0.1.0   Initial build tools

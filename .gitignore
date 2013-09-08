@@ -168,3 +168,7 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+.sass-cache/*
+debug/lib.js
+qunit/app.js
+qunit/lib.js
