@@ -58,12 +58,18 @@ module.exports = function(grunt) {
 					processName: function(fileName) {
 						var arr = fileName.split("."),
 							path = arr[arr.length - 2].split("/"),
-							name = path[path.length - 1];
-						return name;
+							name = path[path.length - 1],
+							isComponents = path.indexOf('components') > -1;
+						if(isComponents) {
+							return 'components/' + name;
+						}
+						else {
+							return name;
+						}
 					}
 				},
 				files: {
-					"debug/templates.js": "app/templates/*.hbs"
+					"debug/templates.js": ["app/templates/*.hbs","app/templates/components/*.hbs"]
 				}
 			}
 		},
@@ -108,7 +114,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			scripts: {
-				files: ['app/library/*.js', 'app/*.js', 'app/controllers/*.js', 'app/views/*.js', 'app/routes/*.js', 'app/css/*.scss', 'app/templates/*.hbs', 'app/tests/*.js'],
+				files: ['app/library/*.js', 'app/*.js', 'app/controllers/*.js', 'app/views/*.js', 'app/routes/*.js', 'app/css/*.scss', 'app/templates/**/*.hbs', 'app/tests/*.js'],
 				tasks: ['ember_handlebars','concat', 'sass'],
 				options: {
 					debounceDelay: 100
