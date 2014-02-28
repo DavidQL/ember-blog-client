@@ -7,6 +7,8 @@
 		{{#if currentUser}}
 			{{currentUser.name}}
 			<a href="#" {{action 'logOut'}}>Log out</a>
+			{{#link-to 'newPost'}}New Post{{/link-to}}
+
 		{{else}}
 			{{#link-to 'login'}}Log in{{/link-to}}
 		{{/if}}

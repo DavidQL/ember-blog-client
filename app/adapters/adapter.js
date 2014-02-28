@@ -31,3 +31,17 @@ $.ajaxSetup({
       withCredentials: true
    }
 });
+
+App.AuthenticatedRouteHelper = {
+  beforeModel: function() {
+    if (!this.controllerFor('application').get('currentUser')) {
+      var auth_deferred = $.get('http://localhost:8080/session');
+
+      auth_deferred.then(function(user) {
+        this.controllerFor('application').set('currentUser', user);
+      }.bind(this));
+
+      return auth_deferred;
+    } 
+  }
+}
