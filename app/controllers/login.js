@@ -19,6 +19,5 @@ App.LoginController = Ember.ObjectController.extend({
 				alert('Bad login info');
 			});
 		}
-	},
-	needs: ['application']
+	}
 });

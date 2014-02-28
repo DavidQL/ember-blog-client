@@ -29,7 +29,7 @@ App.ApplicationSerializer = DS.RESTSerializer.extend({
 $.ajaxSetup({
   xhrFields: {
       withCredentials: true
-   }
+  }
 });
 
 App.AuthenticatedRouteHelper = {

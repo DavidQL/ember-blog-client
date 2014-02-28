@@ -5,5 +5,10 @@ App.NewPostRoute = Ember.Route.extend(App.AuthenticatedRouteHelper, {
       return;
     }
     return this.store.createRecord('post');
+  },
+  deactivate: function() {
+    if (!this.controller.get('model').get('id')) {
+      this.controller.get('model').deleteRecord();
+    }
   }
 });

@@ -3,6 +3,7 @@ App.ApplicationController = Ember.ArrayController.extend({
     logOut: function() {
       $.removeCookie('auth_token');
       this.set('currentUser', null);
+      this.transitionToRoute('index');
     }
   },
 	authors: function() {
