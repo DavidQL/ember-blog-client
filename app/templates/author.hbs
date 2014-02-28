@@ -1,0 +1,9 @@
+{{name}}
+
+{{#each post in posts}}
+	<li>
+		{{#link-to 'post' post}}
+			<h3>{{post.title}}</h3>
+		{{/link-to}}
+	</li>
+{{/each}}

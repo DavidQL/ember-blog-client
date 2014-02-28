@@ -1,0 +1,15 @@
+<ul>
+	{{#each post in controller}}
+		<li>
+			{{#link-to 'post' post}}
+				<h3>{{post.title}}</h3>
+			{{/link-to}}
+
+			{{#if hasCurrentModel}}
+				{{showBodyIfModelsEqual currentModel post}}
+			{{/if}}
+		</li>
+	{{/each}}
+</ul>
+
+{{outlet}}

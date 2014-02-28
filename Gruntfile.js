@@ -25,11 +25,11 @@ module.exports = function(grunt) {
 		},
 		concat: {
 			vendor: {
-				src: ['app/library/jquery-1.9.1.js', 'app/library/handlebars-1.0.0.js', 'app/library/ember-1.0.0.js'],
+				src: ['app/library/jquery-1.9.1.js', 'app/library/handlebars-1.1.2.js', 'app/library/ember-1.4.0.js', 'app/library/ember-data.js'],
 				dest:'debug/lib.js'
 			},
 			app: {
-				src: ['app/app.js', 'debug/templates.js', 'app/controllers/*.js', 'app/views/*.js', 'app/routes/*.js'],
+				src: ['app/app.js', 'debug/templates.js', 'app/router.js', 'app/adapters/*.js', 'app/controllers/*.js', 'app/views/*.js', 'app/routes/*.js', 'app/models/*.js'],
 				dest:'debug/app.js'
 			},
 			test: {
@@ -96,9 +96,14 @@ module.exports = function(grunt) {
 			}
 		},
 		cssmin: {
+			combine: {
+				files: {
+					"debug/app.css": ['debug/app.css', 'app/css/bootstrap-min.css']
+				}
+			},
 			compress: {
 				files: {
-					"release/app.min.css": ["debug/app.css"]
+					"release/app.min.css": "debug/app.css",
 				}
 			}
 		},
@@ -114,7 +119,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			scripts: {
-				files: ['app/library/*.js', 'app/*.js', 'app/controllers/*.js', 'app/views/*.js', 'app/routes/*.js', 'app/css/*.scss', 'app/templates/**/*.hbs', 'app/tests/*.js'],
+				files: ['app/library/*.js', 'app/*.js', 'app/controllers/*.js', 'app/views/*.js', 'app/routes/*.js', 'app/css/*.scss', 'app/css/*.css', 'app/templates/**/*.hbs', 'app/tests/*.js', 'app/adapters/*.js', 'app/models/*.js'],
 				tasks: ['ember_handlebars','concat', 'sass'],
 				options: {
 					debounceDelay: 100
