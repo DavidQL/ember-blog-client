@@ -25,3 +25,9 @@ App.ApplicationSerializer = DS.RESTSerializer.extend({
     return response;
   }
 });
+
+$.ajaxSetup({
+  xhrFields: {
+      withCredentials: true
+   }
+});

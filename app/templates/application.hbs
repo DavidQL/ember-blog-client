@@ -6,6 +6,7 @@
 
 		{{#if currentUser}}
 			{{currentUser.name}}
+			<a href="#" {{action 'logOut'}}>Log out</a>
 		{{else}}
 			{{#link-to 'login'}}Log in{{/link-to}}
 		{{/if}}
