@@ -120,7 +120,7 @@ module.exports = function(grunt) {
 		watch: {
 			scripts: {
 				files: ['app/library/*.js', 'app/*.js', 'app/controllers/*.js', 'app/views/*.js', 'app/routes/*.js', 'app/css/*.scss', 'app/css/*.css', 'app/templates/**/*.hbs', 'app/tests/*.js', 'app/adapters/*.js', 'app/models/*.js'],
-				tasks: ['ember_handlebars','concat', 'sass'],
+				tasks: ['ember_handlebars','concat', 'sass', 'cssmin'],
 				options: {
 					debounceDelay: 100
 				}
@@ -175,6 +175,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-qunit');
 
-	grunt.registerTask('default', ['ember_handlebars', 'concat', 'sass', 'clean', 'copy', 'connect', 'watch']);
+	grunt.registerTask('default', ['ember_handlebars', 'concat', 'sass', 'clean', 'copy', 'connect', 'cssmin', 'watch']);
 	grunt.registerTask('release', ['jshint','uglify', 'cssmin', 'clean', 'copy']);
 };

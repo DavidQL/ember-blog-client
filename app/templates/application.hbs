@@ -1,7 +1,15 @@
 <div class="container">
 	<div class="page-header">
 		<h1>
-			{{#link-to 'index'}}Bloggidy blog {{/link-to}}</h1>
+			{{#link-to 'index'}}Bloggidy blog {{/link-to}}
+		</h1>
+
+		{{#if currentUser}}
+			{{currentUser.name}}
+		{{else}}
+			{{#link-to 'login'}}Log in{{/link-to}}
+		{{/if}}
+		
 	</div>
 
 	<div class="row">
