@@ -1,3 +1,5 @@
+App.Host = "http://localhost:8080";
+
 App.Adapter = DS.RESTAdapter.extend({
   bulkCommit: false
 });
@@ -6,7 +8,7 @@ DS.RESTAdapter.reopen({
   pathForType: function(type) {
     return type === "author" ? "users" : Ember.String.pluralize(type);
   },
-  host: 'http://localhost:8080'
+  host: App.Host
 });
 
 App.ApplicationSerializer = DS.RESTSerializer.extend({
@@ -32,10 +34,10 @@ $.ajaxSetup({
   }
 });
 
-App.AuthenticatedRouteHelper = {
+App.CurrentUserHelper = {
   beforeModel: function() {
     if (!this.controllerFor('application').get('currentUser')) {
-      var auth_deferred = $.get('http://localhost:8080/session');
+      var auth_deferred = $.get(App.Host + '/session');
 
       auth_deferred.then(function(user) {
         this.controllerFor('application').set('currentUser', user);
@@ -43,5 +45,8 @@ App.AuthenticatedRouteHelper = {
 
       return auth_deferred;
     } 
-  }
+  },
+  currentUser: function() {
+    return this.controllerFor('application').get('currentUser');
+  }.property()
 }

@@ -1,6 +1,6 @@
-App.NewPostRoute = Ember.Route.extend(App.AuthenticatedRouteHelper, {
+App.NewPostRoute = Ember.Route.extend(App.CurrentUserHelper, {
   model: function() {
-    if (!this.controllerFor('application').get('currentUser')) {
+    if (!this.get('currentUser')) {
       this.transitionTo('posts');
       return;
     }

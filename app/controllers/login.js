@@ -4,7 +4,7 @@ App.LoginController = Ember.ObjectController.extend({
 			var _this = this;
 			$.ajax({
 				type: "POST",
-				url: "http://localhost:8080/sessions",
+				url: App.Host + "/sessions",
 				data: {
 					email: this.get('email'),
 					password: this.get('password')
