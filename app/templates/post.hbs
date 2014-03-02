@@ -1,9 +1,26 @@
-{{#link-to 'post' model}}
-  <h3>{{title}}</h3>
-{{/link-to}}
+{{#if isEditing}}
+	<form role="form" {{action "save" on='submit'}}>
+		<div class="form-group">
+			<label>Title</label>
+			{{input type="text" value=model.title}}
+		</div>
+		<div class="form-group">
+			<label>Body</label>
+			{{textarea type="text" value=model.body}}
+		</div>
+		{{input type="submit"}}
+	</form>
+	
+{{else}}
+	{{#link-to 'post' model}}
+	  <h3>{{title}}</h3>
+	{{/link-to}}
 
-{{#if isOwner}}
-	<p>i own it</p>
+	{{#if isOwner}}
+
+		<button class="btn btn-default" {{action 'edit'}}>Edit</button>
+		<br/>
+	{{/if}}
+
+	{{body}}
 {{/if}}
-
-{{body}}
