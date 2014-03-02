@@ -1,11 +1,9 @@
 <ul>
 	{{#each post in controller}}
 		<li>
-			{{view App.PostView}}
-
-			{{#if hasCurrentModel}}
-				{{showBodyIfModelsEqual currentModel post}}
-			{{/if}}
+			{{#link-to 'post' post}}
+				<h3>{{post.title}}</h3>
+			{{/link-to}}
 		</li>
 	{{/each}}
 </ul>

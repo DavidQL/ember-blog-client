@@ -4,5 +4,6 @@ App.PostsRoute = Ember.Route.extend({
 	},
 	setupController: function(controller, model) {
 		controller.set('content', model);
+		controller.set('currentUser', this.controllerFor('application').get('currentUser'));
 	}
 });
