@@ -6,7 +6,8 @@ App.ApplicationController = Ember.ArrayController.extend({
       this.transitionToRoute('index');
     }
   },
-	authors: function() {
-		return this.store.find('user')
-	}.property()
+  /* something's missing here: 
+
+
+  */
 });
