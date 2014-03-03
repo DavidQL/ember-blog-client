@@ -20,13 +20,13 @@ App.PostController = Ember.ObjectController.extend({
 	},
 	setIsOwner: function() {
 		var _this = this;
-		return this.get('model').get('author').then(function(author) {
-			if (!author) {
+		return this.get('model').get('user').then(function(user) {
+			if (!user) {
 				_this.set('isOwner', false);
 				return false;
 			}
-			_this.set('isOwner', (author.get('id') === _this.get('currentUser').id.toString()))
-			return (author.get('id') === _this.get('currentUser').id.toString())
+			_this.set('isOwner', (user.get('id') === _this.get('currentUser').id.toString()))
+			return (user.get('id') === _this.get('currentUser').id.toString())
 		});
-	}.observes('content.author.id')
+	}.observes('content.user.id')
 });

@@ -1,5 +1,5 @@
 App.NewAuthorRoute = Ember.Route.extend({
   model: function() {
-    return this.store.createRecord('author');
+    return this.store.createRecord('user');
   }
 })

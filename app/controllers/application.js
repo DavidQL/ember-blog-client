@@ -7,6 +7,6 @@ App.ApplicationController = Ember.ArrayController.extend({
     }
   },
 	authors: function() {
-		return this.store.find('author')
+		return this.store.find('user')
 	}.property()
 });
