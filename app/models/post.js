@@ -1,5 +1,5 @@
-App.Post = DS.Model.extend({
+App.Post = /* fill me in */
 	title: DS.attr(),
 	body: DS.attr(),
-	user: DS.belongsTo('user', {async: true})
+	user: /* fill me in */
 });
