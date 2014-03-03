@@ -1,3 +1,7 @@
 # Objective
 
-Fill in the missing pieces in routes/post.js and routes/posts.js to make the views render correctly.
+Fill in the missing pieces in the route files.
+
+Files to fix:
+	* routes/post.js
+	* routes/posts.js
