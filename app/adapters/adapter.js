@@ -1,12 +1,8 @@
 App.Host = "http://localhost:8080";
 
-App.Adapter = DS.RESTAdapter.extend({
-  bulkCommit: false
-});
+/* something's missing here. (Tell our REST adapter about our host)
 
-DS.RESTAdapter.reopen({
-  host: App.Host
-});
+*/
 
 $.ajaxSetup({
   xhrFields: {
