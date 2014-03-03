@@ -3,7 +3,11 @@ App.PostRoute = Ember.Route.extend({
 		return this.store.find('post', params.post_id);
 	},
 	setupController: function(controller, model) {
-		controller.set('content', model);
-		controller.set('currentUser', this.controllerFor('application').get('currentUser'));
+		// we need to set currentUser on this controller
+		// currentUser can be found on the application controller
+		/* fill me in
+
+
+		*/
 	}
 });

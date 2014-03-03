@@ -1,5 +1,6 @@
 App.PostsRoute = Ember.Route.extend({
-	model: function() {
-		return this.store.find('post');
-	}
+	/* something is missing from this route...
+	
+
+	*/
 });
