@@ -1,9 +1,7 @@
 <ul>
 	{{#each post in controller}}
 		<li>
-			{{#link-to 'post' post}}
-				<h3>{{post.title}}</h3>
-			{{/link-to}}
+			{{!-- Create a link to each post --}}
 		</li>
 	{{/each}}
 </ul>
