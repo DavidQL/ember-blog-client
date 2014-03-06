@@ -1,4 +1,4 @@
-App.Host = "http://localhost:8080";
+App.Host = "http://ember-blog-api.herokuapp.com";
 
 App.Adapter = DS.RESTAdapter.extend({
   bulkCommit: false
