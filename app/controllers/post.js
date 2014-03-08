@@ -25,7 +25,7 @@ App.PostController = Ember.ObjectController.extend({
 				_this.set('isOwner', false);
 				return false;
 			}
-			_this.set('isOwner', (user.get('id') === _this.get('currentUser') && _this.get('currentUser').id.toString()))
+			_this.set('isOwner', (user.get('id') === (_this.get('currentUser') && _this.get('currentUser').id.toString())))
 		});
 	}.observes('content.user.id')
 });
